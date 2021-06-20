@@ -81,9 +81,12 @@
         conn[Interconnection Network]
         mem[Memory]
         IO[I/O]
-        p1-->c1-->conn
-        p2-->c2-->conn
-        p3-->c3-->conn
+        p1-->c1
+        c1-->conn
+        p2-->c2
+        c2-->conn
+        p3-->c3
+        c3-->conn
         conn-->mem
         conn-->IO
 ```
