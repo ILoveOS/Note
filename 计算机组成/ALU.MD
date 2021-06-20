@@ -47,33 +47,22 @@
 ### **乘法器**
 
 ```mermaid
-
 graph TD
-    
     start[开始]
-    
     test{测试乘数最低位}
-    
     add[乘积加上被乘数]
-    
     lsl[被乘数寄存器左移一位]
-    
     lrl[乘数寄存器右移一位]
-    
-    count{第32次?}
-    
+    count{第32次?} 
     ed(结束)
-    
-    start-->test--如果为1-->add
-    
+    start-->test
+    test--如果为1-->add
     test--如果为0-->lsl
-    
     add-->lsl
-    
-    lsl-->lrl-->--False-->test
-    
+    lsl-->lrl
+    lrl-->count
+    count--False-->test
     count--True-->ed
-
 ```
 
 ---
@@ -84,13 +73,18 @@ graph TD
 graph TD
     start[开始]
     pre[余数寄存器减去除数寄存器]
+    p1[余数加上除数商左移,最低位置0]
+    p2[商左移最低位置1]
     test{测试余数}
     lrl[除数寄存器右移一位]
     count{第33次?}
     ed(结束)
-    start-->pre-->test
-    test--小于0-->余数加上除数商左移,最低位置0-->lrl
-    test--大于等于0-->商左移最低位置1-->lrl
+    start-->pre
+    pre-->test
+    test--小于0-->p1
+    p1-->lrl
+    test--大于等于0-->p2
+    p2-->lrl
     lrl-->count
     count--True-->ed
     count--False-->pre
