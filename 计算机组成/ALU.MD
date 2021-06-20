@@ -47,12 +47,33 @@
 ### **乘法器**
 
 ```mermaid
+
 graph TD
-    start[开始]-->test{测试乘数最低位}--如果为1-->add[乘积加上被乘数]
-    test--如果为0-->lsl[被乘数寄存器左移一位]
+    
+    start[开始]
+    
+    test{测试乘数最低位}
+    
+    add[乘积加上被乘数]
+    
+    lsl[被乘数寄存器左移一位]
+    
+    lrl[乘数寄存器右移一位]
+    
+    count{第32次?}
+    
+    ed(结束)
+    
+    start-->test--如果为1-->add
+    
+    test--如果为0-->lsl
+    
     add-->lsl
-    lsl-->乘数寄存器右移一位-->count{第32次?}--False-->test
-    count--True-->ed(结束)
+    
+    lsl-->lrl-->--False-->test
+    
+    count--True-->ed
+
 ```
 
 ---
