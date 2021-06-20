@@ -22,7 +22,8 @@
 
 ```mermaid
 graph LR
-    StateElement1-->cl(Conbiantional logic)-->StateElement2
+    StateElement1-->cl(Conbiantional logic)
+    cl-->StateElement2
 ```
 
 - 最长延迟决定时钟周期
