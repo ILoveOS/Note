@@ -61,6 +61,3 @@ graph LR
 - `Branch`=`beq`
 - `ALUOp1`=`R-format`
 - `ALUOp0`=`beq`
-
-
-

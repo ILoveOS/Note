@@ -47,7 +47,7 @@
 ### **乘法器**
 
 ```mermaid
-graph TD
+graph TB
     start[开始]
     test{测试乘数最低位}
     add[乘积加上被乘数]
@@ -70,7 +70,7 @@ graph TD
 ### **除法器**
 
 ```mermaid
-graph TD
+graph TB
     start[开始]
     pre[余数寄存器减去除数寄存器]
     p1[余数加上除数商左移,最低位置0]
