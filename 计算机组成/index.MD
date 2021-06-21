@@ -1,6 +1,6 @@
 # 目录
 
-- ### [综述](brief.MD)
+- ### [简介](brief.MD)
 - ### [ALU](ALU.MD)
 - ### [mips](mpis.MD)
 - ### [数据通路](datapath.MD)
